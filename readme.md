@@ -41,6 +41,8 @@ curl http://18.188.213.92/report
 
 **Prerequisites:** Go 1.21+
 
+### Linux
+
 ```bash
 # Clone the repo
 git clone https://github.com/<your-username>/GoServiceMonitor.git
@@ -56,9 +58,13 @@ go build -o service-monitor .
 PORT=9000 ./service-monitor
 ```
 
-On Windows:
+### Windows
+
 ```powershell
 go build -o service-monitor.exe .
+.\service-monitor.exe
+
+# Custom port
 $env:PORT=9000; .\service-monitor.exe
 ```
 
