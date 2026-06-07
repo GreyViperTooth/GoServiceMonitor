@@ -23,6 +23,20 @@ A lightweight HTTP health monitoring service written in Go — zero external dep
 | `GET` | `/check-all` | Concurrently check all services and return results |
 | `GET` | `/report` | Uptime statistics for all services |
 
+## Live Demo
+
+The service is deployed on an AWS EC2 instance, running as a systemd service behind nginx on port 80.
+
+**Base URL:** `http://18.188.213.92`
+
+> **Note:** The instance will terminate when I run out of AWS credits — if the URL is unreachable, that's likely why.
+
+Try it:
+```bash
+curl http://18.188.213.92/health
+curl http://18.188.213.92/report
+```
+
 ## Getting Started
 
 **Prerequisites:** Go 1.21+
