@@ -76,9 +76,11 @@ curl -X POST http://localhost:8080/services \
   -H "Content-Type: application/json" \
   -d '{"name":"github","url":"https://github.com"}'
 
-curl -X POST http://localhost:8080/services \
-  -H "Content-Type: application/json" \
-  -d '{"name":"google","url":"https://google.com"}'
+# For Windows cmd:
+curl -X POST http://localhost:8080/services -H "Content-Type: application/json" -d "{\"name\":\"google\",\"url\":\"https://www.google.com\"}"
+
+# For Windows PowerShell:
+Invoke-RestMethod -Uri "http://localhost:8080/services" -Method Post -ContentType "application/json" -Body '{"name":"google","url":"https://www.google.com"}'
 
 # Run an immediate check on all services
 curl http://localhost:8080/check-all
